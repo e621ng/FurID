@@ -1,0 +1,212 @@
+// reset.scss
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+// normalize
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: middle;
+}
+
+button,
+input {
+  line-height: normal;
+  *overflow: visible;
+  border: 0;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  appearance: button;
+  -webkit-appearance: button;
+}
+
+
+
+
+// general
+body {
+  color: #fff;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 85%;
+  line-height: 1.25em;
+}
+
+// fursona
+.fursona-check {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  background: #020f23;
+  background-image: url("/src/assets/background.png");
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .fursona-check-dialog {
+    margin: 0.5em;
+    margin-bottom: 2.5em;
+    height: min-content;
+    width: 500px;
+    max-width: 100%;
+
+    .dialog-header {
+      padding: 0 0.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .dialog-content {
+      background: #152f56;
+      padding: 2em 1em 1em;
+      border-radius: 3px 3px 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      #drawing-area {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        margin-top: 1em;
+        width: 400px;
+        max-width: 100%;
+
+        canvas {
+          border: 1px solid #ccc;
+          background: #fff;
+        }
+
+        .drawing-button {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          cursor: pointer;
+          border: 2px solid transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: transform 0.1s ease-in-out, background 0.2s ease-in-out;
+          background: #25477b;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          &.selected {
+            border-color: #fff;
+          }
+        }
+
+        .color-picker {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 0.5em;
+          margin-bottom: 0.5em;
+        }
+
+        .brush-controls {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 1.5em;
+          margin-top: 0.5em;
+          width: 100%;
+
+          .tools {
+            display: flex;
+            gap: 0.5em;
+
+            #eraser,
+            #undo {
+              font-size: 1.2em;
+              color: #fff;
+            }
+          }
+
+          .brush-picker {
+            display: flex;
+            gap: 0.5em;
+
+            .brush-size {
+              .brush-dot {
+                border-radius: 50%;
+                background: #000;
+                transition: background 0.1s ease-in-out;
+              }
+
+              .brush-small {
+                width: 10px;
+                height: 10px;
+              }
+
+              .brush-medium {
+                width: 16px;
+                height: 16px;
+              }
+
+              .brush-large {
+                width: 24px;
+                height: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .dialog-footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.5em;
+      background: #152f56;
+      padding: 1em 1em 2em;
+      border-radius: 0 0 3px 3px;
+
+      button {
+        background: #25477b;
+        color: #b4c7d9;
+        padding: 0.5em 1em;
+        border-radius: 3px;
+        transition: background 0.1s ease-in-out;
+
+        &:hover {
+          background: #2b538e;
+          color: #e9f2fa;
+        }
+      }
+    }
+  }
+}

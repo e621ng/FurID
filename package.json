@@ -1,0 +1,20 @@
+{
+  "name": "e621ng.furid",
+  "version": "1.0.0",
+  "description": "Standalone FurID verification page",
+  "keywords": [
+    "e621",
+    "furid"
+  ],
+  "license": "ISC",
+  "author": "clragon",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "sass-dev": "sass src/scss/fursona.scss --watch --update --style=expanded src/css/fursona.scss",
+    "sass-prod": "sass src/scss/fursona.scss --no-source-map --style=compressed src/css/fursona.scss"
+  },
+  "devDependencies": {
+    "sass": "^1.86.3"
+  }
+}

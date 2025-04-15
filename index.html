@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <title>FurID</title>
+    <link rel="shortcut icon" type="image/jpg" href="src/assets/favicon.ico"/>
+    <link rel="stylesheet" href="src/css/fursona.scss" nonce="true" />
+    <script
+			  src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+			  integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+			  crossorigin="anonymous"></script>
+  </head>
+  <body>
+    
+    <div class="fursona-check">
+      <div class="fursona-check-dialog">
+        <h1 class="dialog-header">ID Check</h1>
+        <div class="dialog-content">
+          <div id="submission-info">
+            <p>
+              To comply with updated verification guidelines, we now require a digital representation of your <b>fursona</b>. 
+              This ensures that all visitors meet community standards and engage responsibly.
+            </p>
+            <p>
+              Please use the space below to <b>draw your fursona</b>.  
+              Submissions will be reviewed automatically by <b>FurID™</b>, our trusted third-party verification system.  
+              Your submission is used solely for verification and will not be shared.
+            </p>
+          </div>
+
+          <div id="drawing-area" style="display: none;">
+            <p><b>Your fursona</b></p>
+            <div class="color-picker"></div>
+            <canvas id="fursona-canvas" width="400" height="300"></canvas>
+            <div class="brush-controls">
+              <div class="tools">
+                <div id="eraser" data-type="eraser">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" name="settings">
+                    <path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/><path d="m5 11 9 9"/>
+                  </svg>
+                </div>
+                <div id="undo" data-type="undo">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" name="settings">
+                    <path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="brush-picker"></div>
+            </div>
+          </div>
+
+          <div id="submission-done" style="display: none;">
+            <p>
+              <b>Thank you for submitting your fursona!</b>
+            </p>
+            <p>
+              Your submission is now being reviewed by FurID™.<br />
+              You may choose to save a copy of your submission by clicking the button below.
+              </p>
+          </div>
+        </div>
+        <div class="dialog-footer">
+          <button id="start-drawing">Start Verification</button>
+          <button id="submit-fursona" style="display: none;">Submit for Verification</button>
+          <button id="download-fursona" style="display: none;">Download Fursona</button>
+          <button id="close-dialog" style="display: none">Close Verification</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/js/fursona_check.js"></script>
+  </body>
+</html>
